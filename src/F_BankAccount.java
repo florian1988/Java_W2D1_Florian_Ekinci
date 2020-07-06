@@ -7,6 +7,7 @@ public class F_BankAccount {
 
     String Account;
     int Money;
+    int newMoney;
     int i = 0;
     int PlusOrMinus;
 
@@ -28,28 +29,33 @@ public class F_BankAccount {
 
         if (PlusOrMinus == 1){
 
-            System.out.print( "Write in the Amount: ");
+            System.out.println( "Write in the Amount: ");
             int amount = scan.nextInt();
 
-            Money = Money + amount;
-            System.out.print(Account + "   " + Money);
+            newMoney = Money + amount;
+
+            System.out.println(Account + " " + Money + " + " + amount + " = " + newMoney);
 
         } else if(PlusOrMinus == 2){
 
-            System.out.print( "Write in the Amount: ");
+            System.out.println( "Write in the Amount: ");
             int amount = scan.nextInt();
 
-            Money = Money - amount;
+            newMoney = Money - amount;
 
                 if(Money < 0){
-                    System.out.print(  Account + " Your Account is negative with:  " + Money);
+                    System.out.println( Account + " " + Money + " -  " + amount + " = " + newMoney + " Your Account is negative");
                 }else{
-                    System.out.print(Account + "   " + Money);
+                    System.out.println(Account + " " + Money + " - " + amount + " = " + newMoney);
                 }
 
 
         } else {
-            System.out.print("try again");
+            System.out.println("try again");
         }
+    }
+
+    public void printagian(){
+        System.out.println(Account + " your account balance is " + newMoney);
     }
 }
